@@ -5,32 +5,40 @@ import { Email, Success } from './screens'
 
 class Modal extends Component {
   renderScreen() {
-    const { screen } = this.props;
+    const { screen } = this.props
 
     // return <Success />
 
-    switch(screen) {
+    switch (screen) {
       case 'email':
-        return <Email {...this.props} />;
-        break;
+        return <Email {...this.props} />
+        break
       case 'success':
-        return <Success {...this.props} />;
-        break;
+        return <Success {...this.props} />
+        break
       default:
-        return null;
-        break;
+        return null
+        break
     }
 
-    return null;
+    return null
   }
 
   render() {
-    const { screen, setModal } = this.props;
+    const { screen, setModal } = this.props
 
     return (
-      <div className={`modal ${screen ? 'modal--active' : ''}`} onClick={() => setModal()}>
-        <div className="modal__content" onClick={event => event.stopPropagation()}>
-          <button  className="modal__close ss-close" onClick={() => setModal()}>Close</button>
+      <div
+        className={`modal ${screen ? 'modal--active' : ''}`}
+        onClick={() => setModal()}
+      >
+        <div
+          className="modal__content"
+          onClick={event => event.stopPropagation()}
+        >
+          <button className="modal__close ss-close" onClick={() => setModal()}>
+            Close
+          </button>
           {this.renderScreen()}
         </div>
       </div>

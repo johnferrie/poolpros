@@ -2,33 +2,33 @@ export function getDealerHours(weekHours) {
   const hoursMap = {
     weekdays: '',
     saturday: '',
-    sunday: ''
-  };
-  
+    sunday: '',
+  }
+
   for (const key in weekHours) {
-    const hours = weekHours[key];
-    let mapKey = 'weekdays';
-    let separator = '';
+    const hours = weekHours[key]
+    let mapKey = 'weekdays'
+    let separator = ''
 
     if (!hours || hours === 'On Call') {
-      separator = '- ';
+      separator = '- '
     }
 
     if (key === 'sat') {
-      mapKey = 'saturday';
+      mapKey = 'saturday'
     }
 
     if (key === 'sun') {
-      mapKey = 'sunday';
+      mapKey = 'sunday'
     }
 
-    hoursMap[mapKey] = separator + (hours || 'Closed');
+    hoursMap[mapKey] = separator + (hours || 'Closed')
   }
 
-  return hoursMap;
+  return hoursMap
 }
 
 export function capitalizeFirst(str) {
-  const first = str[0].toUpperCase();
-  return first + str.slice(1);
+  const first = str[0].toUpperCase()
+  return first + str.slice(1)
 }

@@ -6,57 +6,79 @@ import dealers from '../data/dealers.json'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Modal from '../components/Modal'
-import "../styles/main.scss"
+import '../styles/main.scss'
 
 class TemplateWrapper extends Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       ...dealers,
-      modal: {}
+      modal: {},
     }
 
-    this.setModal = this.setModal.bind(this);
+    this.setModal = this.setModal.bind(this)
   }
 
   setModal(data = {}) {
     this.setState({
-      modal: data
+      modal: data,
     })
   }
 
   render() {
-    const { children } = this.props;
-    const { dealers, modal } = this.state;
-    const pageScrolling = modal.screen ? 'no-scroll': '';
+    const { children } = this.props
+    const { dealers, modal } = this.state
+    const pageScrolling = modal.screen ? 'no-scroll' : ''
 
     return (
       <div className="page-wrapper">
         <Helmet
-          htmlAttributes={{  lang: 'en', class: pageScrolling }}
+          htmlAttributes={{ lang: 'en', class: pageScrolling }}
           title="Pool Pros"
           link={[
             {
               rel: 'icon',
               type: 'image/png',
               sizes: '32x32',
-              href: '/favicons/favicon-32x32.png'
-            }
+              href: '/favicons/favicon-32x32.png',
+            },
           ]}
           meta={[
-            { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' },
-            { name: 'description', content: 'Pool Pro, is a distributor of swimming pool supplies, equipment and related leisure products.' },
+            {
+              name: 'viewport',
+              content:
+                'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
+            },
+            {
+              name: 'description',
+              content:
+                'Pool Pro, is a distributor of swimming pool supplies, equipment and related leisure products.',
+            },
             { name: 'keywords', content: 'pools, installations' },
             { name: 'og:url', content: 'http://poolpros.ferrie.me' },
             { name: 'og:title', content: 'Pool Pros' },
-            { name: 'og:description', content: 'Pool Pro, is a distributor of swimming pool supplies, equipment and related leisure products.' },
-            { name: 'og:image', content: 'http://poolpros.ferrie.me/images/hero-image-mobile.png'  },
-            { name: 'twitter:card', content: 'summary'},
-            { name: 'twitter:site', content: '@PoolPros'},
-            { name: 'twitter:title', content: 'Pool Pros'},
-            { name: 'twitter:description', content: 'Pool Pro, is a distributor of swimming pool supplies, equipment and related leisure products.'},
-            { name: 'twitter:image', content: 'http://poolpros.ferrie.me/images/hero-image-mobile.png' }
+            {
+              name: 'og:description',
+              content:
+                'Pool Pro, is a distributor of swimming pool supplies, equipment and related leisure products.',
+            },
+            {
+              name: 'og:image',
+              content: 'http://poolpros.ferrie.me/images/hero-image-mobile.png',
+            },
+            { name: 'twitter:card', content: 'summary' },
+            { name: 'twitter:site', content: '@PoolPros' },
+            { name: 'twitter:title', content: 'Pool Pros' },
+            {
+              name: 'twitter:description',
+              content:
+                'Pool Pro, is a distributor of swimming pool supplies, equipment and related leisure products.',
+            },
+            {
+              name: 'twitter:image',
+              content: 'http://poolpros.ferrie.me/images/hero-image-mobile.png',
+            },
           ]}
         />
         <Header />
