@@ -1,9 +1,21 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# poolpros
+Pool Pros
 
 For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
 
-## Install
+## Running locally
+
+Navigate to the root directory and run from your CLI:
+```sh
+npm install
+```
+
+After install run:
+```sh
+gatsby develop
+```
+
+## Install New
 
 Make sure that you have the Gatsby CLI program installed:
 ```sh
@@ -20,7 +32,3 @@ Then you can run it by:
 cd gatsby-example-site
 npm run develop
 ```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
