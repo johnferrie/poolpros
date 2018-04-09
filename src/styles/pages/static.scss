@@ -1,0 +1,17 @@
+.static {
+  &__title {
+    font-size: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  &__p {
+    font-size: 14px;
+    line-height: 1.4;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

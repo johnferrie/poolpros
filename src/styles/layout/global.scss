@@ -1,0 +1,51 @@
+.no-scroll {
+  overflow: hidden;
+}
+
+.faux-checkbox {
+  position: relative;
+
+  &__input {
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &:checked {
+      + * {
+        border-color: $mariner;
+        border-width: 8px;
+      }
+    }
+  }
+
+  &__box {
+    background: $white;
+    border: 1px solid $alto;
+    border-radius: 3px;
+    display: block;
+    height: 23px;
+    width: 23px;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .tablet-and-mobile {
+    display: none
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .desktop-hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mobile-hidden {
+    display: none;
+  }
+}

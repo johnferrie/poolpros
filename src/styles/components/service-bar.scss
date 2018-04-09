@@ -1,0 +1,82 @@
+.service-bar {
+  color: $white;
+  font-size: 12px;
+  width: 100%;
+
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    &--commercial-service {
+      align-items: baseline;
+      display: flex;
+
+      &::after {
+        background: image-url('action-commercial-icon.png') no-repeat 0 bottom;
+        background-size: contain;
+        content: '';
+        height: 10px;
+        margin-left: 9px;
+        position: relative;
+        top: 2px;
+        width: 13px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .service-bar {
+    background: $congress-blue;
+    justify-content: flex-end;
+
+    &--mobile {
+      display: none;
+    }
+
+    &__wrapper {
+      align-items: center;
+      display: flex;
+      height: 42px;
+      justify-content: flex-end;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 46px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .service-bar {
+    background: $mariner;
+    justify-content: center;
+
+    &--desktop {
+      display: none;
+    }
+
+    &__wrapper {
+      padding: 0 9px;
+    }
+
+    &__list {
+      border-bottom: 1px solid $white;
+      justify-content: center;
+      font-size: 11.8px;
+      padding: 16px 0 12px;
+      width: 100%;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        border-right: 1px solid $white;
+        margin-right: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}

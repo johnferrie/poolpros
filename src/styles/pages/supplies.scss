@@ -1,0 +1,32 @@
+.supply-item {
+  &__image {
+    border: 2px solid $alto;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    color: $congress-blue;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .page-supplies {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .supply-item {
+    margin: 0 auto;
+    max-width: 400px;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}

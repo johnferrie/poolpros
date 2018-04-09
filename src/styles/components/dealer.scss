@@ -1,0 +1,186 @@
+.dealer {
+  box-shadow: 0 1px 4px rgba($black, .31);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  text-align: center;
+
+  &__top-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 18px;
+  }
+
+  &__name {
+    align-items: center;
+    display: flex;
+    font-weight: 300;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__phone {
+    display: flex;
+    font-weight: 800;
+    letter-spacing: .2px;
+  }
+
+  &__email-message {
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  &__contact-btn {
+    @include button('email-icon.png', $robins-egg-blue, $congress-blue);
+  }
+
+  &__hours-title {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+
+  &__hours-list {
+    font-size: 13px;
+  }
+
+  &__hours-open {
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__certifications {
+    background: #f6f6f6;
+    font-size: 12px;
+    width: 100%;
+
+    &-list {
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 27px percentage(20px / 411px) 30px;
+    }
+  }
+
+  &__certification {
+    align-items: center;
+    display: flex;
+    flex: 1 1 50%;
+    letter-spacing: .2px;
+    margin-bottom: 15px;
+    padding: 0 0 0 percentage(26px / 411px);
+
+    &:last-child,
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      content: '';
+      height: 13px;
+      margin-right: 10px;
+      width: 13px;
+    }
+
+    &--installation-pro {
+      &::before {
+        background-image: image-url('star-installation-pro.png');
+      }
+    }
+
+    &--commercial-pro {
+      &::before {
+        background-image: image-url('users-commercial-pro.png');
+      }
+    }
+
+    &--residential-pro {
+      &::before {
+        background-image: image-url('home-residential-pro.png');
+      }
+    }
+
+    &--service-pro {
+      &::before {
+        background-image: image-url('gear-service-pro.png');
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .dealer {
+    border-radius: 10px;
+
+    &__name {
+      border-bottom: 2px solid $wild-sand;
+      font-size: 26px;
+      margin-bottom: 32px;
+      min-height: 104px;
+    }
+
+    &__phone {
+      align-items: center;
+      font-size: 26.2px;
+      margin-bottom: 19px;
+  
+      &::before {
+        background: url('/images/phone-icon-desktop.png') no-repeat 0 0;
+        background-size: contain;
+        content: '';
+        height: 28px;
+        margin-right: 15px;
+        width: 28px;
+      }
+    }
+
+    &__contact-btn {
+      margin-bottom: 37px;
+    }
+
+    &__hours {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dealer {
+    padding-top: 28px;
+
+    &__name {
+      font-size: 20px;
+      margin-bottom: 26px;
+    }
+
+    &__phone {
+      align-items: baseline;
+      background: $mariner image-url('phone-icon-mobile.png') no-repeat 5px 4px;
+      background-size: 28px auto;
+      border-radius: 3px;
+      color: $white;
+      margin-bottom: 15px;
+      padding: 10px 10px 8px 40px;
+
+      &::before {
+        content: 'Tap to call';
+        font-size: 10px;
+        margin-right: 5px;
+      }
+    }
+
+    &__contact-btn {
+      margin-bottom: 27px;
+    }
+
+    &__hours {
+      margin-bottom: 35px;
+    }
+  }
+}

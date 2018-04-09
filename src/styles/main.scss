@@ -1,0 +1,31 @@
+// Core functions and variables
+@import 'core/functions';
+@import 'core/variables';
+@import 'core/extends';
+@import 'core/mixins';
+
+// base styles
+@import "../../node_modules/normalize-scss/sass/normalize";
+@include normalize();
+@import 'base/fonts';
+@import 'base/base';
+
+// layout styles
+@import 'layout/global';
+@import 'layout/page';
+@import 'layout/header';
+@import 'layout/footer';
+
+// component styles
+@import 'components/service-bar';
+@import 'components/dealer';
+@import 'components/filter';
+@import 'components/modal';
+@import 'components/tooltip';
+
+// page styles
+@import 'pages/pools-and-spas';
+@import 'pages/supplies';
+@import 'pages/resources';
+@import 'pages/services';
+@import 'pages/static';

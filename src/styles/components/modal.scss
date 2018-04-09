@@ -1,0 +1,373 @@
+.modal {
+  background: rgba(0, 0, 0, .5);
+  content: '';
+  position: fixed;
+  transition: opacity 300ms ease-out;
+  z-index: 100;
+
+  &:not(.modal--active) {
+    left: -100px;
+    top: -100px;
+    height: 0;
+    opacity: 0;
+    width: 0;
+  }
+
+  &--active {
+    height: 100vh;
+    left: 0;
+    overflow-y: scroll;
+    top: 0;
+    width: 100vw;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__content {
+    background: $white;
+    box-shadow: 0 0 19px rgba($black, .36);
+    max-width: 703px;
+    position: relative;
+    transform: translateY(30px);
+    transition: transform 300ms ease-out;
+
+    .modal--active & {
+      transform: translateY(0);
+    }
+  }
+  
+  &__header {
+    background:$congress-blue;
+    color: $white;
+  }
+
+  &__screen {
+    font-weight: 700;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+
+  &__company-name {
+    font-weight: 400;
+  }
+
+  &__close {
+    background: none;
+    color: $white;
+    font-family: "SSPika";
+    font-size: 24px;
+    position: absolute;
+    right: 16px;
+    top: 20px;
+  }
+
+  &__message {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__legend {
+    display: block;
+    font-size: 15px;
+    padding: 27px 0 23px;
+    width: 100%;
+  }
+
+  &__field-container {
+    &:not(:last-of-type) {
+      margin-bottom: 17px;
+    }
+
+    &--short {
+      max-width: 276px;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-right: 55px;
+    position: relative;
+    
+    &--validate,
+    &--valid,
+    &--optional {
+      &::after {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    &--validate,
+    &--valid {
+      &::after {
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: contain;
+        content: '';
+        height: 22px;
+        width: 22px;
+      }
+    }
+
+    &--validate {
+      &::after {
+        background-image: image-url('circle-form.png');
+      }
+    }
+
+    &--valid {
+      &::after {
+        background-image: image-url('checkmark-circle.png');
+      }
+    }
+
+    &--optional {
+      &::after {
+        color: $silver;
+        content: 'optional';
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__input,
+  &__textarea {
+    border: 1px solid $alto;
+    font-size: 15px;
+    display: block;
+    padding: 0 13px;
+    width: 100%;
+  }
+
+  &__input {
+    height: 47px;
+
+    &--radio {
+      height: auto;
+      opacity: 0;
+      position: absolute;
+      width: auto;
+    }
+  }
+
+  &__textarea {
+    height: 80px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    resize: vertical;
+  }
+
+  &__button-container {
+    border-top: 2px solid $gallery;
+    padding-top: 20px;
+  }
+
+  &__submit,
+  &__loading {
+    border: 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__disclaimer {
+    font-size: 12.5px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .modal {
+    &__content {
+      margin: 10vh auto;
+      width: 100%;
+    }
+
+    &__header,
+    &__form,
+    &__footer,
+    &__message {
+      padding: 0 32px;
+    }
+
+    &__header {
+      padding-bottom: 41px;
+      padding-top: 38px;
+    }
+
+    &__screen {
+      font-size: 16px;
+    }
+
+    &__company-name {
+      font-size: 32px;
+    }
+
+    &__fieldset {
+      background: $wild-sand;
+      margin-bottom: 26px;
+    }
+
+    &__message {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  
+    &__legend {
+      background: $white;
+    }
+
+    &__field-container {
+      margin: 0 23px;
+  
+      &:first-of-type {
+        padding-top: 27px;
+      }
+    }
+
+    &__input {
+      &--radio {
+        &:checked {
+          + * {
+            background: $robins-egg-blue;
+            border-color: $mosque;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    &__radio-container {
+      display: inline-block;
+    }
+  
+    &__radio {
+      align-items: center;
+      border: 1px solid;
+      border-radius: 3px;
+      color: $mine-shaft;
+      cursor: pointer;
+      display: flex;
+      font-size: 14px;
+      height: 30px;
+      justify-content: center;    
+      width: 63px;
+  
+      &:first-of-type {
+        margin-right: 8px;
+      }
+    }
+
+    &__button-container {
+      margin: 0 23px 41px;
+      text-align: center;
+    }
+
+    &__submit {
+      background: image-url('next-arrow.png') no-repeat 100% 2px;
+      background-size: 12px 14px;
+      padding: 0 22px 0 0;
+    }
+
+    &__footer {
+      background: $wild-sand;
+      padding-bottom: 19px;
+      padding-top: 22px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal {
+    &__content {
+      margin: 5vh 12px;
+    }
+
+    &__header,
+    &__form,
+    &__footer,
+    &__message {
+      padding: 0 17px;
+    }
+
+    &__header {
+      padding-bottom: 29px;
+      padding-top: 20px;
+    }
+
+    &__screen {
+      font-size: 14px;
+    }
+
+    &__company-name {
+      font-size: 28px;
+    }
+
+    &__message {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+
+    &__field-container {
+      // used to clear fload on &__radio-container
+      overflow: hidden;
+
+      &--short {
+        max-width: 246px;
+      }
+    }
+
+    &__radio-container {
+      float: left;
+      position: relative;
+      margin-right: 16px;
+      padding-left: 27px;
+
+      &::before {
+        background: $alto;
+        border: 1px solid $black;
+        border-radius: 3px;
+        content: '';
+        height: 18px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 18px;
+      }
+    }
+
+    &__input {
+      &--radio {
+        &:checked {
+          + * {
+            &::before {
+              background: $white;
+              border: 6px solid $mariner;
+              border-radius: 3px;
+              content: '';
+              height: 18px;
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    &__button-container {
+      color: $robins-egg-blue;
+      margin: 0 0 41px;
+      text-align: right;
+    }
+
+    &__footer {
+      display: none;
+    }
+  }
+}

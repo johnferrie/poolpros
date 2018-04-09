@@ -1,0 +1,180 @@
+.filter {
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: .2px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 0;
+
+  &__count {
+    color: $mariner;
+  }
+
+  &__options {
+    display: flex;
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+  }
+
+  &__checkbox {
+    margin-right: 13px;
+  }
+
+  &__label {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .filter {
+    &__count {
+      flex: 0 0 percentage(381px / $max-width);
+    }
+
+    &__options {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .filter {
+    background: $wild-sand;
+    border-radius: 10px;
+    padding: 16px 0 12px;
+
+    &__count {
+      align-items: center;
+      display: flex;
+      height: 55px;
+      justify-content: flex-end;
+      border-right: 2px solid $gallery;
+      padding: 0 29px 0 0;
+    }
+
+    &__options {
+      align-items: center;
+      padding: 0 0 0 31px;
+    }
+
+    &__legend {
+      margin-right: 47px;
+    }
+
+    &__list {
+      display: flex;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 38px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .filter {
+    align-items: center;
+    font-size: 15px;
+    justify-content: space-between;
+    padding: 16px 0;
+
+    &::before {
+      background: $wild-sand;
+      content: '';
+      height: 100%;
+      left: -17px;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      z-index: -1;
+    }
+
+    &__options {
+      position: relative;
+    }
+
+    &__legend {
+      background: $white;
+      border: 1px solid $alto;
+      cursor: pointer;
+      padding: 14px 58px 12px 12px;
+      position: relative;
+
+      &::before {
+        background: $wild-sand;
+        border-left: 1px solid $alto;
+        content: '';
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 46px;
+      }
+
+      &::after {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid $mine-shaft;
+        content: '';
+        height: 0; 
+        position: absolute;
+        right: 17px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 100ms ease-out;
+        width: 0;
+      }
+
+      &--active {
+        &::after {
+          transform: rotate(180deg) translateY(-50%);
+          top: 43%;
+        }
+      }
+    }
+
+    &__list {
+      border-bottom: 1px solid $alto;
+      display: none;
+      padding-bottom: 20px;
+      position: absolute;
+      right: -16px;
+      top: calc(100% - 1px);
+      width: 100vw;
+
+      &--active {
+        background: $wild-sand;
+        display: block;
+      }
+    }
+
+    &__item {
+      background: $white;
+      border-left: 1px solid $alto;
+      border-right: 1px solid $alto;
+      margin: 0 16px;
+      padding: 0 22px 35px;
+      
+
+      &:first-child {
+        border-top: 1px solid $alto;
+        padding-top: 22px;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $alto;
+        padding-bottom: 27px;
+      }
+    }
+  }
+}

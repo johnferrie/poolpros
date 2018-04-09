@@ -1,0 +1,99 @@
+.page-footer {
+  align-items: center;
+  background: $congress-blue;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 26px;
+
+  &__logo {
+    height: 25px;
+    width: 190px;
+    margin-bottom: 21px;
+
+    &-link {
+      @extend %ir;
+      background: url('/images/pool-pros-logo-footer.png') no-repeat 0 0;
+      background-size: contain;
+      display: block;
+      height: inherit;
+    }
+  }
+
+  &__social {
+    align-items: center;
+    display: flex;
+    margin: 0 0 28px;
+
+    &-title {
+      font-size: 15.2px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &-link {
+      @extend %ir;
+      background-position: center center;
+      background-repeat: no-repeat;
+      display: inline-block;
+      height: 21px;
+      width: 18px;
+
+      &--twitter{
+        background-image: url('/images/twitter-icon.png');
+        background-size: 18px 15px;
+        margin-right: 10px;
+      }
+
+      &--facebook {
+        background-image: url('/images/facebook-icon.png');
+        background-size: 9px 19px;
+        margin-right: 12px;
+      }
+
+      &--youtube {
+        background-image: url('/images/youtube-icon.png');
+        background-size: 16px 21px;
+      }
+    }
+  }
+
+  &__legal {
+    background: $mariner;
+    font-size: 12px;
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+
+    &-item {
+      display: inline-block;
+
+      &:not(:last-child) {
+        border-right: 1px solid;
+        line-height: 12px;
+        margin-right: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .page-footer {
+    &__social {
+      &-title {
+        margin-right: 31px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .page-footer {
+    &__social {
+      &-title {
+        margin-right: 90px;
+      }
+    }
+  }
+}

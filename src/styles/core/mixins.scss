@@ -1,0 +1,22 @@
+@mixin button($icon: '', $border-color: $mariner, $text-color: $mariner) {
+  align-items: center;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  color: $text-color;
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 17px;
+
+  @if $icon != '' {
+    &::before {
+      background: image-url($icon) no-repeat center center;
+      background-size: contain;
+      display: inline-block;
+      content: '';
+      height: 16px;
+      margin-right: 13px;
+      width: 15px;
+    }
+  }
+}

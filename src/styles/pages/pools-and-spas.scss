@@ -1,0 +1,73 @@
+.pool-spa {
+  &:not(:last-child) {
+    border-bottom: 2px solid $alto;
+  }
+
+  &__content {
+    font-size: 18px;
+    line-height: 1.4;
+
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__title {
+    color: $congress-blue;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .pool-spa {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+    }
+
+    &__image {
+      flex: 0 0 percentage(400px / $max-width);
+    }
+
+    &__title {
+      font-size: 40px;
+    }
+    
+    &:nth-child(odd) {
+      .pool-spa {
+        &__image {
+          margin-right: 40px;
+        }
+      }
+    }
+  
+    &:nth-child(even) {
+      .pool-spa {
+        &__image {
+          margin-left: 40px;
+          order: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pool-spa {
+    max-width: 400px;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+    }
+
+    &__image {
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,210 @@
+.page-header {
+  background: $white;
+  box-shadow: 0 0 4px rgba($black, .31);
+  position: relative;
+  z-index: 5;
+  
+  &__logo {
+    &-link {
+      @extend %ir;
+      background: url('/images/pool-pros-logo.png') no-repeat center center;
+      background-size: contain;
+      display: block;
+      height: inherit;
+    }
+  }
+  
+  &__nav {
+    display: flex;
+    flex: 1 1 auto;
+    font-size: 15px;
+    justify-content: flex-end;
+  }
+  
+  &__button {
+    @include button('location-icon.png');
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .page-header {
+    &__list {
+      align-items: center;
+      color: $congress-blue;
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    &__item {
+      margin-right: 30px;
+  
+      &-link {
+        border-bottom: 1px solid transparent;
+        font-weight: 700;
+
+        &:hover,
+        &--active {
+          border-bottom-color: currentColor;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .page-header {
+    &__item {
+      margin-right: 58px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .page-header {
+    &__list{
+      background: $white;
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: height 200ms ease-out;
+      width: 100%;
+
+      &::before {
+        border-top: 5px solid $robins-egg-blue;
+        color: $endeavour;
+        content: 'MENU';
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 40px 0 30px;
+        text-align: center;
+      }
+
+      &--active {
+        height: 415px;
+      }
+    }
+
+    &__item {
+      color: $dove-gray;
+      font-size: 18px;
+      font-weight: 600;
+
+      &:not(:last-child) {
+        margin-bottom: 1px;
+      }
+
+      &:last-child {
+        border-bottom: 5px solid $robins-egg-blue;
+      }
+
+      &-link {
+        background: $wild-sand image-url('next-arrow.png') no-repeat calc(100% - 23px) center;
+        background-size: auto 14px;
+        display: block;
+        padding: 26px 22px 32px;
+
+        &:hover,
+        &--active {
+          background-color: $gallery;
+        }
+      }
+    }
+
+    &__mobile {
+      background: image-url('menu-icon-mobile.png') no-repeat 0 0;
+      background-size: contain;
+      height: 58px;
+      outline: 0;
+      text-indent: -9999px;
+      width: 58px;
+
+      &--active {
+        background: none;
+        color: $robins-egg-blue;
+        font-family: "SSPika";
+        font-size: 24px;
+        height: 40px;
+        position: absolute;
+        right: 14px;
+        text-indent: 0;
+        top: 15px;
+        width: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .page-header {
+    &__logo {
+      flex: 0 0 231px;
+      height: 31px;
+      margin: 35px 0 34px;
+    }
+
+    &__button {
+      margin-left: 28px;
+    }
+
+    &__optional-text {
+      display: inline-block;
+      padding: 0 5px;
+    }
+
+    &__mobile {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .page-header {
+    &__logo {
+      flex: 1 1 155px;
+      height: 22px;
+      margin: 19px 0 14px;
+      max-width: 155px;
+    }
+
+    &__button {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 7px;
+      margin-right: 59px;
+      margin-left: 10px;
+      text-transform: uppercase;
+
+      &::before {
+        margin-right: 3px;
+      }
+    }
+
+    &__mobile {
+      position: absolute;
+      right: 4px;
+      top: 5px;
+
+      &--active {
+        right: 14px;
+        top: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  .page-header {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+}
